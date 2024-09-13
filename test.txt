@@ -1,0 +1,25 @@
+
+session_start();
+    
+// Assume you've collected the username and password from a form
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+// Hardcoded username and password for demonstration purposes
+$correct_username = 'username';
+$correct_password = 'password';
+
+// Check if the credentials are correct
+if ($username === $correct_username && $password === $correct_password) {
+    // Store user information in the session
+    $_SESSION['loggedin'] = true;
+    $_SESSION['username'] = $username;
+    
+    // Display the success message
+    echo "Login successful! Welcome, " . htmlspecialchars($username) . ".";
+} else {
+    // If login fails
+    echo "Login failed. Please check your username and password.";
+}
+    
+
